@@ -31,7 +31,7 @@ $(document).ready(function() {
 
   //map options
   var mapOptions = {
-    zoom: 5,
+    zoom: 4,
     center: new google.maps.LatLng(37.09024, -100.712891),
     panControl: false,
     panControlOptions: {
