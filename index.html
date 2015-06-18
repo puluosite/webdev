@@ -1,23 +1,50 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>
-        UCLA EDA LAB
+        UCLA EDA LAB Test Website
     </title>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key="></script>
+    <script language="javascript" type="text/javascript" src="js/map.js"></script>
+
+    <?
+    <style type="text/css">
+html, body, #map-canvas { height: 500px; width: 1000px; margin: 0; padding: 0;}
+    </style>
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+        center: { lat: 34.027724, lng: -118.3429266},
+        zoom: 11 
+      };
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    ?>
 </head>
-<body><h1>It works!</h1>
-<p>This is the default web page for this server.</p>
-<ul>
+<body>
+  <h1>It works!</h1>
+  <div id="map-canvas"></div>
+  <p>This is the default web page for this server.</p>
+  <ul>
     <li>
-     Number 1
+      Number 1
     </li>
     <br>
     <li>
-     Number 2
+      Number 2
     </li>
-</ul>
-<p>The web server software is running but no content has been added, yet.</p>
+  </ul>
+  <p>The web server software is running but no content has been added, yet.</p>
 </body>
 <footer>
-  2015 tianheng tu UCLA
+  c 2015 tianheng tu UCLA
 </footer>
 </html>
