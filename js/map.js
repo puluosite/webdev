@@ -8,6 +8,13 @@ $(document).ready(function() {
   var userCords;
   var tempMarkerHolder = [];
 
+  // get two input val
+  $('#button1').on('click', function(){
+    console.log('click button');
+    var input1 = $('#text1').val();
+    console.log(input1);
+  });
+
   // get user current location
   if (navigator.geolocation) {    
 
@@ -54,5 +61,23 @@ $(document).ready(function() {
   //Fire up Google maps and place inside the map-canvas div
 	map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
+  $('#chooseZip').submit( function() {
+    var user_zip = $('#textZip').val();
+    
+    var access_url;
+
+    if(userZip){
+			accessURL = "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=" + userZip;
+		} else {
+			accessURL = "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/locSearch?lat=" + userCords.latitude + "&lng=" + userCords.longitude;
+		}
+  
+    console.log(user_zip);
+
+
+    return false;
+
+
+  });
 
 });
